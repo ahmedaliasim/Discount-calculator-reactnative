@@ -5,7 +5,12 @@ export const initialState = {
     start: 0,
     msg: "Enter Amount",
     orignalprice: "",
-    remaining: ""
+    remaining: "",
+    cvalue: "",
+    saveval: "",
+    bvalue:"",
+    msg1: ""
+
   };
   
   
@@ -44,7 +49,8 @@ export const initialState = {
             check: "press ",
             msg: "Enter Amount",
             remaining: "",
-            orignalprice:""
+            orignalprice:"",          
+           
           } ;     
   
           
@@ -74,6 +80,65 @@ export const initialState = {
                 state.start = 1;
            
            return state.start;
+
+
+
+           
+        
+      case "show":
+        return {
+       
+          cvalue:  state.currentValue ,
+          msg1:  state.msg,
+          bvalue: state.hintNum ,
+          saveval:  state.remaining 
+        };
+
+        case "back":
+        if(state.start === 2){
+         state.start = 1
+        }
+        return {
+         start: state.start,
+         cvalue: "",
+         msg1: " ",
+         check: "press ",
+         saveval: "",
+         bvalue:"",
+         currentValue: "",
+         hintNum: " ",
+         check: "press ",
+         msg: "Enter Amount",
+         remaining: "",
+         orignalprice:"",
+         
+        };
+        
+
+            
+      case "playagain":
+        return {
+          start:1,
+          currentValue: "",
+          hintNum: " ",
+          check: "press ",
+          msg: "Enter Amount",
+          remaining: "",
+          orignalprice:""
+
+        };
+      case "finish":
+        return {
+          
+          start:0,
+          currentValue: "",
+          hintNum: " ",
+          check: "press ",
+          msg: "Enter Amount",
+          remaining: "",
+          orignalprice:""
+
+        };
   
            default:
         return state;

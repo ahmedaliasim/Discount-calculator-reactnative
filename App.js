@@ -33,6 +33,60 @@ const message =
      </View>
 
 
+const history =
+<View style={styles.container}>
+<StatusBar barStyle="light-content" /> 
+<SafeAreaView>
+<Text style= {styles.borderz}>
+            <Text style={styles.value}>
+            {(this.state.cvalue).toLocaleString()}
+          </Text>
+          </Text>
+
+<Text style= {styles.borderz}>
+            <Text style={styles.value}>     
+            {(this.state.msg1).toLocaleString()}
+          </Text>
+            </Text>
+
+<Text style= {styles.borderz}>
+            <Text style={styles.value}>     
+            {(this.state.bvalue).toLocaleString()}
+          </Text>
+            </Text>
+
+<Text style= {styles.borderz}>
+            <Text style={styles.value}>     
+            {(this.state.saveval).toLocaleString()}
+          </Text>
+            </Text>
+
+
+            
+  <Row>
+    
+           <Button
+              text="Results"
+              theme="secondary"
+              onPress={() => this.handleTap('show')}
+            />
+
+             <Button
+              text="Back"
+              theme="secondary"
+              onPress={() => this.handleTap('back')}
+            />
+
+   </Row>
+    
+ 
+
+
+</SafeAreaView>
+</View>
+
+
+
 
 
 
@@ -74,10 +128,16 @@ const Discal=
             />
          
 
-<Button
-              text="next"
+             <Button
+              text="Next"
               theme="secondary"
               onPress={() => this.handleTap("enterdiscount")}
+            />
+
+              <Button
+              text="Save"
+              theme="secondary"
+              onPress={() => this.setState({start:2})}
             />
 
           </Row>
@@ -139,7 +199,7 @@ const Discal=
 
 
     return  <View style={styles.container}>
-      {this.state.start === 0 ? message :Discal}
+       {this.state.start === 0 ? message :(this.state.start === 1 ?Discal:history)}
     </View>
  }
 }
