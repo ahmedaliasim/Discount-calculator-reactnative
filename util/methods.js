@@ -4,7 +4,8 @@ export const initialState = {
     check: "press ",
     start: 0,
     msg: "Enter Amount",
-    orignalprice: ""
+    orignalprice: "",
+    remaining: ""
   };
   
   
@@ -41,19 +42,23 @@ export const initialState = {
             currentValue: "",
             hintNum: " ",
             check: "press ",
-            msg: "Enter Amount"
+            msg: "Enter Amount",
+            remaining: "",
+            orignalprice:""
           } ;     
   
           
 
           case "discount":
-            state.currentValue = parseInt(state.currentValue ) * parseInt(state.hintNum) / 100 
+            state.currentValue = parseInt(state.currentValue ) * parseInt(state.hintNum) / 100 ;
+            state.remaining =  parseInt(state.orignalprice ) - parseInt(state.currentValue )
 
           return{
 
-            currentValue: "Discounted Price =  " + state.currentValue ,
-            msg: "",
-            hintNum: "Orignal Price =  " + state.orignalprice
+            currentValue: "Discount Price= " + state.currentValue + "Rs" ,
+            msg: "Discount % = " + state.hintNum + "%",
+            hintNum: "Orignal Price= " + state.orignalprice + "Rs",
+            remaining: "saved= "+ state.remaining + "Rs"
 
           }
 

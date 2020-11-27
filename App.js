@@ -36,7 +36,7 @@ const message =
 
 
 
-const gameView =
+const Discal=
 
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
@@ -52,12 +52,17 @@ const gameView =
             {(this.state.hintNum).toLocaleString()}
           </Text>
 
-         
-
-        
+ 
           <Text style={styles.value}>
             {(this.state.msg).toLocaleString()}
+            
           </Text>
+
+          <Text style={styles.value}>
+          {(this.state.remaining).toLocaleString()}
+            
+          </Text>
+          
 
         
           <Row>           
@@ -134,7 +139,7 @@ const gameView =
 
 
     return  <View style={styles.container}>
-      {this.state.start === 0 ? message :gameView}
+      {this.state.start === 0 ? message :Discal}
     </View>
  }
 }
