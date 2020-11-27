@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, StatusBar, SafeAreaView , Modal } from "react-native";
 
 import Row from "./components/Row";
 import Button from "./components/Button";
@@ -17,7 +17,13 @@ export default class App extends React.Component {
     this.setState(state => calculator(type, value, state));
   };
 
-   
+   handlemodal = () => {
+
+      this.setState({
+        modal: !this.state.modal ? true : false
+      })
+
+   }
 
  render(){
 
@@ -140,7 +146,35 @@ const Discal=
               onPress={() => this.setState({start:2})}
             />
 
+             
+
           </Row>
+
+
+
+            <Modal visible = {this.state.modal}>
+            
+          
+          <Text >
+           hello
+          </Text>
+       
+
+        
+
+            
+
+<Row>
+            <Button  text="closeHistory"  onPress={(this.handlemodal)} />
+           
+           
+          
+           
+          </Row>
+
+            </Modal>
+
+
 
           <Row>
             <Button text="7" onPress={() => this.handleTap("number", 7)} />
@@ -172,7 +206,11 @@ const Discal=
 
 
           <Row>
-            
+            <Button
+              text="History"
+              theme="secondary"
+              onPress={(this.handlemodal)}
+            />
          
             <Button
               text="0"

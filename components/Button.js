@@ -19,13 +19,14 @@ const styles = StyleSheet.create({
     borderRadius: Math.floor(buttonWidth),
     margin: 5
   },
- 
+  
  
 });
 
 export default ({ onPress, text, size, theme }) => {
   const buttonStyles = [styles.button];
   const textStyles = [styles.text];
+  const buttonStyles1 = [styles.button1];
   
   return (
     <TouchableOpacity onPress={onPress} style={buttonStyles}> 

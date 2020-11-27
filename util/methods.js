@@ -9,7 +9,8 @@ export const initialState = {
     cvalue: "",
     saveval: "",
     bvalue:"",
-    msg1: ""
+    msg1: "",
+    modal: false
 
   };
   
@@ -139,6 +140,7 @@ export const initialState = {
           orignalprice:""
 
         };
+        
   
            default:
         return state;
